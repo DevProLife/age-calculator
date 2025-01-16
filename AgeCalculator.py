@@ -10,8 +10,35 @@ def calculate_age(birth_date):
     
     return age
 
+def get_horoscope(month, day):
+    # Horoscope signs based on birth month and day
+    if (month == 1 and day >= 20) or (month == 2 and day <= 18):
+        return "Aquarius"
+    elif (month == 2 and day >= 19) or (month == 3 and day <= 20):
+        return "Pisces"
+    elif (month == 3 and day >= 21) or (month == 4 and day <= 19):
+        return "Aries"
+    elif (month == 4 and day >= 20) or (month == 5 and day <= 20):
+        return "Taurus"
+    elif (month == 5 and day >= 21) or (month == 6 and day <= 20):
+        return "Gemini"
+    elif (month == 6 and day >= 21) or (month == 7 and day <= 22):
+        return "Cancer"
+    elif (month == 7 and day >= 23) or (month == 8 and day <= 22):
+        return "Leo"
+    elif (month == 8 and day >= 23) or (month == 9 and day <= 22):
+        return "Virgo"
+    elif (month == 9 and day >= 23) or (month == 10 and day <= 22):
+        return "Libra"
+    elif (month == 10 and day >= 23) or (month == 11 and day <= 21):
+        return "Scorpio"
+    elif (month == 11 and day >= 22) or (month == 12 and day <= 21):
+        return "Sagittarius"
+    else:
+        return "Capricorn"
+
 def main():
-    print("Welcome to the Age Calculator!")
+    print("Welcome to the Age and Horoscope Calculator!")
     while True:
         try:
             print("\nEnter your birthdate:")
@@ -43,8 +70,9 @@ def main():
             # Create a birthdate object
             birth_date = datetime(year, month, day)
             age = calculate_age(birth_date)
+            horoscope = get_horoscope(month, day)
             
-            print(f"\nYou are {age} years old.")
+            print(f"\nYou are {age} years old, and your horoscope is {horoscope}.")
             
         except ValueError as e:
             print(f"\nError: {e}. Please try again.")
