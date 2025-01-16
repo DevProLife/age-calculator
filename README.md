@@ -18,3 +18,6 @@ The **Age Calculator Console Application** is a simple Python-based program that
 1. Clone this repository:
    ```bash
    git clone https://github.com/your-username/age-calculator.git
+## Function we use
+We use the date time library in our code
+ from datetime import datetime
