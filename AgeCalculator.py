@@ -37,6 +37,30 @@ def get_horoscope(month, day):
     else:
         return "Capricorn"
 
+def get_age_category(age):
+    if 0 <= age < 10:
+        return "You are young."
+    elif 10 <= age < 20:
+        return "You are a child."
+    elif 20 <= age < 30:
+        return "You are an adult."
+    elif 30 <= age < 40:
+        return "You are in your thirties."
+    elif 40 <= age < 50:
+        return "You are in your forties."
+    elif 50 <= age < 60:
+        return "You are in your fifties."
+    elif 60 <= age < 70:
+        return "You are in your sixties."
+    elif 70 <= age < 80:
+        return "You are in your seventies."
+    elif 80 <= age < 90:
+        return "You are in your eighties."
+    elif 90 <= age < 100:
+        return "You are in your nineties."
+    else:
+        return "You are a centenarian or beyond."
+
 def main():
     print("Welcome to the Age and Horoscope Calculator!")
     while True:
@@ -71,8 +95,9 @@ def main():
             birth_date = datetime(year, month, day)
             age = calculate_age(birth_date)
             horoscope = get_horoscope(month, day)
+            age_category = get_age_category(age)
             
-            print(f"\nYou are {age} years old, and your horoscope is {horoscope}.")
+            print(f"\nYou are {age} years old, and your horoscope is {horoscope}. {age_category}")
             
         except ValueError as e:
             print(f"\nError: {e}. Please try again.")
